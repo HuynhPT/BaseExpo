@@ -6,10 +6,12 @@ import React, { useEffect } from "react";
 import HomePage from "./page/home_page";
 import SettingPage from "./page/setting_page";
 import LoginPage from "./page/login_page";
+import RegisterPage from "./page/register_page";
 export enum AppRoutes {
   Login = "Login",
   Home = "Home",
-  Settings = "Settings"
+  Settings = "Settings",
+    Register= "Register"
 }
 const AppNavigator = () => {
   return (
@@ -21,6 +23,13 @@ const AppNavigator = () => {
           headerShown: false // Hide the header for Login page
         }}
       />
+        <Stack.Screen
+            name={AppRoutes.Register}
+            component={RegisterPage}
+            options={{
+                headerShown: false // Hide the header for Home page
+            }}
+        />
       <Stack.Screen
         name={AppRoutes.Home}
         component={HomePage}
