@@ -5,8 +5,8 @@ import { FONT_SIZE, FONT_WEIGHT, SIZE } from "../utils/size";
 interface IProps {
   errors?: string;
   placeholder?: string;
-  onChangeText: (value: string) => void;
-  onBlur: (val: any) => void;
+  onChangeText?: (value: string) => void;
+  onBlur?: (val: any) => void;
   value: string | undefined;
   label?: string;
 }

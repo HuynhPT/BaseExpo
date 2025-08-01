@@ -48,7 +48,7 @@ const RegisterPage = () => {
         name="email"
         control={control}
         rules={{
-          required: false,
+          required: "Email không được để trống",
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <>

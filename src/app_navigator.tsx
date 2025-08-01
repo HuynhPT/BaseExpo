@@ -8,16 +8,27 @@ import SettingPage from "./page/setting_page";
 import LoginPage from "./page/login_page";
 import RegisterPage from "./page/register_page";
 import Splash_page from "./page/splash_page";
+import BottomTabNavigator from "./utils/navigation/bottomTabNavigator";
 export enum AppRoutes {
   Login = "Login",
   Home = "Home",
   Settings = "Settings",
   Register = "Register",
   SplashScreen = "SplashScreen",
+  Category = "Category",
+  ProductPage = "Product",
+  BottomTab = "BottomTab",
 }
 const AppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName={AppRoutes.SplashScreen}>
+      <Stack.Screen
+        name={AppRoutes.BottomTab}
+        component={BottomTabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name={AppRoutes.SplashScreen}
         component={Splash_page}
@@ -39,14 +50,6 @@ const AppNavigator = () => {
           headerShown: false, // Hide the header for Home page
         }}
       />
-      <Stack.Screen
-        name={AppRoutes.Home}
-        component={HomePage}
-        options={{
-          headerShown: false, // Hide the header for Home page
-        }}
-      />
-      <Stack.Screen name={AppRoutes.Settings} component={SettingPage} />
     </Stack.Navigator>
   );
 };

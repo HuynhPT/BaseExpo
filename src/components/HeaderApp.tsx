@@ -40,7 +40,7 @@ const HeaderApp: FC<HeaderAppProps> = ({
       style={[
         styles.container,
         {
-          height: SIZE[30] + asets.top,
+          height: SIZE[36] + asets.top,
           paddingTop: asets.top,
           paddingBottom: SIZE[10],
         },
