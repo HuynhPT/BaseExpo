@@ -4,6 +4,7 @@ import HeaderApp from "../../components/HeaderApp";
 import InputComponent from "../../components/InputComponent";
 import { Controller, useForm } from "react-hook-form";
 import TextComponent from "../../components/TextComponent";
+import ButtonComponent from "../../components/ButtonComponent";
 
 const RegisterPage = () => {
   const {
@@ -32,9 +33,9 @@ const RegisterPage = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <>
-            <TextComponent text={"Tên đăng nhập"} />
             <InputComponent
               value={value}
+              label={"Tên đăng nhập"}
               placeholder={"Nhập username"}
               onChangeText={onChange}
               onBlur={onBlur}
@@ -51,8 +52,8 @@ const RegisterPage = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <>
-            <TextComponent text={"Email"} />
             <InputComponent
+              label={"Email"}
               value={value}
               placeholder={"Nhập email"}
               onChangeText={onChange}
@@ -69,8 +70,8 @@ const RegisterPage = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <>
-            <TextComponent text={"Mật khẩu"} />
             <InputComponent
+              label={"Mật khẩu"}
               value={value}
               placeholder={"Nhập mật khẩu"}
               onChangeText={onChange}
@@ -90,9 +91,9 @@ const RegisterPage = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <>
-            <TextComponent text={"Nhập lại mật khẩu"} />
             <InputComponent
               value={value}
+              label={"Nhập lại mật khẩu"}
               placeholder={"Nhập lại mật khẩu"}
               onChangeText={onChange}
               onBlur={onBlur}
@@ -104,9 +105,7 @@ const RegisterPage = () => {
           </>
         )}
       />
-      <TouchableOpacity onPress={handleSubmit(onSubmit)}>
-        <Text>Submit</Text>
-      </TouchableOpacity>
+      <ButtonComponent title={"Đăng ký"} onPress={handleSubmit(onSubmit)} />
     </View>
   );
 };
